@@ -52,11 +52,12 @@ back.addEventListener("click", () => {
 });
 
 // ! check the operator
+/*
 window.addEventListener("click", () => {
   let str = displayText.value;
   let len = str.substr(-2);
   let str2;
-  ///////////////////////////////
+
   //Array operator check
   const checkOperator = [
     "++",
@@ -84,50 +85,53 @@ window.addEventListener("click", () => {
     "*+",
     "*-",
     "*%",
-    "*/",
+    "*(dicede)/",
   ];
   if ([...checkOperator].includes(len)) {
     str2 = str.substr(0, str.length - 1);
     displayText.value = str2;
   }
-  //////////////////////////////
-  //  * top impliment code using array
-  //   if (
-  //     len == "++" ||
-  //     len == "+/" ||
-  //     len == "+-" ||
-  //     len == "+%" ||
-  //     len == "+*" ||
-  //     len == "--" ||
-  //     len == "-/" ||
-  //     len == "-+" ||
-  //     len == "-%" ||
-  //     len == "-*" ||
-  //     len == "//" ||
-  //     len == "/-" ||
-  //     len == "/+" ||
-  //     len == "/%" ||
-  //     len == "/*" ||
-  //     len == "%*" ||
-  //     len == "%%" ||
-  //     len == "%-" ||
-  //     len == "%+" ||
-  //     len == "%/" ||
-  //     len == "%*" ||
-  //     len == "**" ||
-  //     len == "*+" ||
-  //     len == "*-" ||
-  //     len == "*%" ||
-  //     len == "*/"
-  //   ) {
-  //     str2 = str.substr(0, str.length - 1);
-  //     displayText.value = str2;
-  //   }
+  ////////////////////////////
+  //    * top impliment code using array
+  if (
+    len == "++" ||
+    len == "+/" ||
+    len == "+-" ||
+    len == "+%" ||
+    len == "+*" ||
+    len == "--" ||
+    len == "-/" ||
+    len == "-+" ||
+    len == "-%" ||
+    len == "-*" ||
+    len == "//" ||
+    len == "/-" ||
+    len == "/+" ||
+    len == "/%" ||
+    len == "/*" ||
+    len == "%*" ||
+    len == "%%" ||
+    len == "%-" ||
+    len == "%+" ||
+    len == "%/" ||
+    len == "%*" ||
+    len == "**" ||
+    len == "*+" ||
+    len == "*-" ||
+    len == "*%" ||
+    len == "*(dicede)/"
+  ) {
+    str2 = str.substr(0, str.length - 1);
+    displayText.value = str2;
+  }
 });
-
+*/
 // ? after sum check a number or operator
 let clearSum = 0;
 function myfun(x) {
+  let str = displayText.value;
+  let len = str.substr(-1);
+  let str2;
   if (clearSum == 1) {
     if (x == "+" || x == "/" || x == "%" || x == "*" || x == "-") {
       displayText.value += x;
@@ -135,6 +139,14 @@ function myfun(x) {
       displayText.value = x;
     }
     clearSum = 0;
+  } else if (x == "+" || x == "/" || x == "%" || x == "*" || x == "-") {
+    if (len == "+" || len == "/" || len == "%" || len == "*" || len == "-") {
+      str2 = str.substr(0, str.length - 1);
+      displayText.value = str2;
+      displayText.value += x;
+    } else {
+      displayText.value += x;
+    }
   } else {
     displayText.value += x;
   }

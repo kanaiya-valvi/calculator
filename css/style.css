@@ -50,9 +50,17 @@ html {
   border: none;
   outline: none;
   background-color: var(--light-gray);
+  transition: all 0.3s;
+}
+.btn:active {
+  background-color: #495057;
 }
 #ac {
   background-color: var(--red);
+  color: #fff;
+}
+#ac:active {
+  background-color: #e03131;
   color: #fff;
 }
 #addition {

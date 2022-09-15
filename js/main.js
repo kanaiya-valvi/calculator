@@ -26,7 +26,6 @@ document.querySelector("#substract").onclick = () => myfun("-");
 document.querySelector("#sum").onclick = () => {
   let str3 = displayText.value;
   len2 = str3.substr(-2);
-  console.log(len2);
   if (len2 == "/0") {
     displayText.value = "";
   } else if (displayText.value !== "") {
@@ -137,7 +136,6 @@ let len2;
 function myfun(x) {
   let str = displayText.value;
   let len = str.substr(-1);
-  // len2 = str.substr(-2);
   let str2;
   if (clearSum == 1) {
     if (x == "+" || x == "/" || x == "%" || x == "*" || x == "-") {
@@ -157,11 +155,7 @@ function myfun(x) {
   } else {
     displayText.value += x;
   }
-  // if (x == 0) {
-
-  // }
 }
-console.log(len2);
 // TODO entuter button click event
 /*
 addEventListener("keypress", (e) => {
